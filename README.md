@@ -6,4 +6,4 @@
 
 &nbsp;
 - ### [Download the .yymps](https://github.com/Tornado-Technology/Vectors/releases/)
-- ### Read the [documentation](http://Tornado-Technology.github.io/Vectors)
+- ### Read the [documentation](https://tornado-technology.github.io/Vectors/#/latest/)
