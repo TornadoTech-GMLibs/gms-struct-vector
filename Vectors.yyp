@@ -4,7 +4,7 @@
     {"id":{"name":"wave","path":"scripts/wave/wave.yy",},"order":1,},
     {"id":{"name":"font_russian_pank","path":"fonts/font_russian_pank/font_russian_pank.yy",},"order":0,},
     {"id":{"name":"log","path":"scripts/log/log.yy",},"order":0,},
-    {"id":{"name":"Vector2","path":"scripts/Vector2/Vector2.yy",},"order":2,},
+    {"id":{"name":"Vector2","path":"scripts/Vector2/Vector2.yy",},"order":0,},
     {"id":{"name":"room_demo","path":"rooms/room_demo/room_demo.yy",},"order":0,},
   ],
   "Options": [
@@ -29,6 +29,7 @@
     {"folderPath":"folders/DEMO.yy","order":1,"resourceVersion":"1.0","name":"DEMO","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/DEMO/Scripts.yy","order":3,"resourceVersion":"1.0","name":"Scripts","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/DEMO/Fonts.yy","order":4,"resourceVersion":"1.0","name":"Fonts","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Vectos.yy","order":3,"resourceVersion":"1.0","name":"Vectos","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

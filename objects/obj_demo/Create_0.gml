@@ -62,3 +62,16 @@ log(vector2._length()); // Outuput: 4000
 // this also works for either numbers or vector
 log(vector2_to_string(vector2, " Juju ")); // Outuput: 10 Juju 10
 log(vector2_to_string(vector2._lerp(100, 100, 0.5), " - ")); // Outuput: 55 - 55
+
+
+// ########################### DIR EXAMPLE ##########################
+// Vector2 dir_set() 
+// for info look: https://tornado-technology.github.io/Vectors/#/latest/methods?id=installed-dir
+vector2.dir_set(vector2_dir.down, 13);
+log(vector2.to_string()) // Outuput: 10:-13
+
+vector2.dir_add(vector2_dir.right, 100);
+log(vector2.to_string()) // Outuput: 110:-13
+
+vector2.dir_multi(vector2_dir.one, 0.1);
+log(vector2.to_string()) // Outuput: 11:-1.30

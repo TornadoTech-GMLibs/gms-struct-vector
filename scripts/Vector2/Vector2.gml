@@ -17,8 +17,8 @@ function Vector2(_x, _y) constructor {
 		var vector = argument[0];
 		
 		if (argument_count > 1) {
-			_x = argument[0];
-			_y = argument[1];
+			var _x = argument[0];
+			var _y = argument[1];
 			vector = new Vector2(_x, _y);
 		}
 		
@@ -35,8 +35,8 @@ function Vector2(_x, _y) constructor {
 		var vector = argument[0];
 		
 		if (argument_count > 1) {
-			_x = argument[0];
-			_y = argument[1];
+			var _x = argument[0];
+			var _y = argument[1];
 			vector = new Vector2(_x, _y);
 		}
 		
@@ -48,8 +48,8 @@ function Vector2(_x, _y) constructor {
 		var vector = argument[0];
 		
 		if (argument_count > 1) {
-			_x = argument[0];
-			_y = argument[1];
+			var _x = argument[0];
+			var _y = argument[1];
 			vector = new Vector2(_x, _y);
 		}
 		
@@ -74,8 +74,8 @@ function Vector2(_x, _y) constructor {
 		var vector = argument[0];
 		
 		if (argument_count > 1) {
-			_x = argument[0];
-			_y = argument[1];
+			var _x = argument[0];
+			var _y = argument[1];
 			vector = new Vector2(_x, _y);
 		}
 		
@@ -86,8 +86,8 @@ function Vector2(_x, _y) constructor {
 		var vector = argument[0];
 		
 		if (argument_count > 1) {
-			_x = argument[0];
-			_y = argument[1];
+			var _x = argument[0];
+			var _y = argument[1];
 			vector = new Vector2(_x, _y);
 		}
 		
@@ -112,7 +112,7 @@ function Vector2(_x, _y) constructor {
 	
 	_lerp = function() {
 		var vector = argument[0];
-		var amount = ":";
+		var amount = "0.5";
 		
 		if (argument_count > 1) {
 			amount = argument[1];
@@ -129,7 +129,7 @@ function Vector2(_x, _y) constructor {
 	}
 
 	#region Dir
-		var _dir_base = function(dir, value, vector) {
+	__dir_base = function(dir, value, vector) {
 		switch (dir) {
 			case vector2_dir.down:
 				vector.y = -value;
@@ -155,12 +155,18 @@ function Vector2(_x, _y) constructor {
 	}
 	
 	dir_set = function(dir, value) {
-		_dir_base(dir, value, self);
+		__dir_base(dir, value, self);
 	}
 	
 	dir_add = function(dir, value) {
-		var vector =  new Vector2(x, y);
-		_dir_base(dir, value, vector);
+		var vector = new Vector2(0, 0);
+		__dir_base(dir, value, vector);
+		self.add(vector);
+	}
+	
+	dir_multi = function(dir, value) {
+		var vector = new Vector2(x, y);
+		__dir_base(dir, value, vector);
 		vector.min(new Vector2(1, 1));
 		self.multi(vector);
 	}
