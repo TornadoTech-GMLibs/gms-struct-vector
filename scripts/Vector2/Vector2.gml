@@ -23,12 +23,15 @@ function Vector2(_x, _y) constructor {
 		}
 		
 		x = vector.x;
-		y = vector.y;
+		y = vector.;
+		
+		return self;
 	}
 	
 	static negative = function() {
 		x = -x;
 		y = -y;
+	    return self;
 	}
 	
 	static add = function() {
@@ -42,6 +45,7 @@ function Vector2(_x, _y) constructor {
 		
 		x += vector.x;
 		y += vector.y;
+		return self;
 	}
 
 	static multi = function() {
@@ -55,11 +59,13 @@ function Vector2(_x, _y) constructor {
 		
 		x *= vector.x;
 		y *= vector.y;
+		return self;
 	}
 	
 	static zero = function() {
 		x = 0;
 		y = 0;
+		return self;
 	}
 
 	static to_string = function(delimiter = ":") {
@@ -156,12 +162,14 @@ function Vector2(_x, _y) constructor {
 	
 	static dir_set = function(dir, value) {
 		__dir_base(dir, value, self);
+		return self;
 	}
 	
 	static dir_add = function(dir, value) {
 		var vector = new Vector2(0, 0);
 		__dir_base(dir, value, vector);
 		self.add(vector);
+		return self;
 	}
 	
 	static dir_multi = function(dir, value) {
@@ -169,6 +177,7 @@ function Vector2(_x, _y) constructor {
 		__dir_base(dir, value, vector);
 		vector.min(new Vector2(1, 1));
 		self.multi(vector);
+		return self;
 	}
 	#endregion
 }
