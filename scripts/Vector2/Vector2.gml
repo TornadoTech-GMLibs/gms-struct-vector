@@ -13,7 +13,7 @@ function Vector2(_x, _y) constructor {
 	x = _x;
 	y = _y;
 	
-	set = function() {
+	static set = function() {
 		var vector = argument[0];
 		
 		if (argument_count > 1) {
@@ -26,12 +26,12 @@ function Vector2(_x, _y) constructor {
 		y = vector.y;
 	}
 	
-	negative = function() {
+	static negative = function() {
 		x = -x;
 		y = -y;
 	}
 	
-	add = function() {
+	static add = function() {
 		var vector = argument[0];
 		
 		if (argument_count > 1) {
@@ -44,7 +44,7 @@ function Vector2(_x, _y) constructor {
 		y += vector.y;
 	}
 
-	multi = function() {
+	static multi = function() {
 		var vector = argument[0];
 		
 		if (argument_count > 1) {
@@ -57,20 +57,20 @@ function Vector2(_x, _y) constructor {
 		y *= vector.y;
 	}
 	
-	zero = function() {
+	static zero = function() {
 		x = 0;
 		y = 0;
 	}
 
-	to_string = function(delimiter = ":") {
+	static to_string = function(delimiter = ":") {
 		return string(x) + delimiter + string(y);
 	}
 	
-	_length = function() {
+	static _length = function() {
 		return sqr(x * x + y * y);
 	}
 
-	_min = function() {
+	static _min = function() {
 		var vector = argument[0];
 		
 		if (argument_count > 1) {
@@ -82,7 +82,7 @@ function Vector2(_x, _y) constructor {
 		return new Vector2(min(x, vector.x), min(y, vector.y));
 	}
 	
-	_max = function() {
+	static _max = function() {
 		var vector = argument[0];
 		
 		if (argument_count > 1) {
@@ -94,7 +94,7 @@ function Vector2(_x, _y) constructor {
 		return new Vector2(max(x, vector.x), max(y, vector.y));
 	}
 	
-	_clamp = function() {
+	static _clamp = function() {
 		var vector_min = argument[0];
 		var vector_max = argument[1];
 		
@@ -110,7 +110,7 @@ function Vector2(_x, _y) constructor {
 		return new Vector2(clamp(x, vector_min.x, vector_max.x), clamp(y, vector_min.y, vector_max.y));
 	}
 	
-	_lerp = function() {
+	static _lerp = function() {
 		var vector = argument[0];
 		var amount = "0.5";
 		
@@ -129,7 +129,7 @@ function Vector2(_x, _y) constructor {
 	}
 
 	#region Dir
-	__dir_base = function(dir, value, vector) {
+	static __dir_base = function(dir, value, vector) {
 		switch (dir) {
 			case vector2_dir.down:
 				vector.y = -value;
@@ -154,17 +154,17 @@ function Vector2(_x, _y) constructor {
 		}
 	}
 	
-	dir_set = function(dir, value) {
+	static dir_set = function(dir, value) {
 		__dir_base(dir, value, self);
 	}
 	
-	dir_add = function(dir, value) {
+	static dir_add = function(dir, value) {
 		var vector = new Vector2(0, 0);
 		__dir_base(dir, value, vector);
 		self.add(vector);
 	}
 	
-	dir_multi = function(dir, value) {
+	static dir_multi = function(dir, value) {
 		var vector = new Vector2(x, y);
 		__dir_base(dir, value, vector);
 		vector.min(new Vector2(1, 1));
