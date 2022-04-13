@@ -1,77 +1,86 @@
-/// @desc Examples
+var vector = Vector2(10, 15);
 
-// New Vector2
-var vector2 = new Vector2(324, 567);
+// Converts
+log("Converts");
 
-// Vector2 to_string() 
-// returns a document, you can supply your own separator as input, by default ":"
-// first x then y
-log(vector2.to_string());     // Outuput: 324:567
-log(vector2.to_string("][")); // Outuput: 324][567
+log(vector.to_string());
+log(vector.to_string(" - "));
 
-// Vector2 negative() 
-// makes vector values negative
-vector2.negative();
-log(vector2.to_string()); // Outuput: -324:-567
+log(vector.to_array());
+log(vector.to_array(true));
 
-// Vector2 set()
-// sets values for x & y a vector
-vector2.set(35, 60); // or vector2.set(new Vector2(35, 60)); 
-log(vector2.to_string()); // Outuput: 35:60
+// Console can't normaly print list
+log(vector.to_list());
+log(vector.to_list(true));
 
-// Vector2 add()
-// summing one vector by another, or alternatively takes two coordinates
-vector2.add(35, 60);
-log(vector2.to_string()); // Outuput: 70:120
+delete vector;
+log("==========");
 
-// I did not create a function for subtraction, 
-// you can simply use the negative() function and the vector itself to be subtracted
-var some_vector = new Vector2(-35, -60);
-vector2.add(some_vector);
-log(vector2.to_string()); // Outuput: 35:60
+// Set
+log("Sets");
 
-// Vector2 multi()
-// multiply one vector by another, or alternatively takes two coordinates
-vector2.multi(2, 2);
-log(vector2.to_string()); // Outuput: 70:120
-vector2.multi(new Vector2(2, 2));
-log(vector2.to_string()); // Outuput: 140:240
-// Division can be done through multiplication
-vector2.multi(0.1, 0.1);
-log(vector2.to_string()); // Outuput: 7:12
+// If you do not write a Y value, it will default to the X value, 
+// And if you do not write anything, the vector will take on the value 0, 0
+var shortVector = Vector2(10);
 
-// Vector2 zero()
-// Nullifies the vector
-vector2.zero();
-log(vector2.to_string()); // Outuput: 0:0
+// Zero - x: 0, y: 0
+// One  - x: 1, y: 1
+// Negative - x: -x, y: -y
+log(shortVector.zero().to_string());
+log(shortVector.one().to_string());
+log(shortVector.negative().to_string());
 
-// Vector2 _min() _max() _clamp()
-//accepts either a vector or numeric values as input and returns
-vector2.set(vector2._max(10, 10));     // Set max to vector
-log(vector2.to_string());              // Outuput: 10:10
-log((vector2._min(new Vector2(0, 11))).to_string()); // Outuput: 0:10
-log((vector2._clamp(4, 10, 3, 5)).to_string());      // Outuput: 3:5
+delete shortVector;
+log("==========");
 
-// Vector2 _length()
-// returns the length of the vector according to the formula
-// sqr(x * x + y * y)
-// P.S. the function returns a real number, but the log automatically converts to a string
-log(vector2._length()); // Outuput: 4000
+// Math - Base
+var mathBaseVector = Vector2();
+log("Math - Base");
 
-// Vector2 _lerp() & not Vector2 fumction vector2_to_string()
-// this also works for either numbers or vector
-log(vector2_to_string(vector2, " Juju ")); // Outuput: 10 Juju 10
-log(vector2_to_string(vector2._lerp(100, 100, 0.5), " - ")); // Outuput: 55 - 55
+// I will say once all these functions
+// Can take as input both a vector and two numbers separated by a comma
+log(mathBaseVector.set(70, 70).to_string());
+log(mathBaseVector.add(10, 10).to_string());
+log(mathBaseVector.sub(20, 20).to_string());
+log(mathBaseVector.multi(10, 10).to_string());
+log(mathBaseVector.divis(20, 20).to_string());
 
+delete mathBaseVector;
+log("==========");
 
-// ########################### DIR EXAMPLE ##########################
-// Vector2 dir_set() 
-// for info look: https://tornado-technology.github.io/Vectors/#/latest/methods?id=installed-dir
-vector2.dir_set(vector2_dir.down, 13);
-log(vector2.to_string()) // Outuput: 10:-13
+// Math - Base
+var mathVector = Vector2(10, 30);
+log("Math");
 
-vector2.dir_add(vector2_dir.right, 100);
-log(vector2.to_string()) // Outuput: 110:-13
+log(mathVector.math_length());
+log(mathVector.math_min(100, 100));
+log(mathVector.math_max(2, 2));
+log(mathVector.math_clamp(2, 50, 2, 50));
+log(mathVector.math_lerp(60, 60, 0.2));
 
-vector2.dir_multi(vector2_dir.one, 0.1);
-log(vector2.to_string()) // Outuput: 11:-1.30
+delete mathVector;
+log("==========");
+
+// Utils
+var utilsVector = Vector2(15, 35);
+log("Utils");
+
+log(utilsVector.to_string());
+log(utilsVector.copy().add(1, 1).to_string());
+log(utilsVector.to_string());
+
+delete utilsVector;
+log("==========");
+
+var dirVector = Vector2(17);
+log("Dirs");
+
+// For more info look: https://tornado-technology.github.io/Vectors/#/latest/methods?id=installed-dir
+log(dirVector.dir_set(vector2_dir.down, 13).to_string());
+log(dirVector.dir_add(vector2_dir.right, 100).to_string());
+log(dirVector.dir_multi(vector2_dir.one, 0.1).to_string());
+
+delete dirVector;
+log("==========");
+
+// Look to Draw event and obj_square for more functionality!

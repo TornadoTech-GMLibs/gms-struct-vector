@@ -5,6 +5,8 @@
     {"id":{"name":"font_russian_pank","path":"fonts/font_russian_pank/font_russian_pank.yy",},"order":0,},
     {"id":{"name":"log","path":"scripts/log/log.yy",},"order":0,},
     {"id":{"name":"Vector2","path":"scripts/Vector2/Vector2.yy",},"order":0,},
+    {"id":{"name":"spr_square","path":"sprites/spr_square/spr_square.yy",},"order":0,},
+    {"id":{"name":"obj_square","path":"objects/obj_square/obj_square.yy",},"order":1,},
     {"id":{"name":"room_demo","path":"rooms/room_demo/room_demo.yy",},"order":0,},
   ],
   "Options": [
@@ -14,7 +16,7 @@
     {"name":"Windows","path":"options/windows/options_windows.yy",},
     {"name":"operagx","path":"options/operagx/options_operagx.yy",},
   ],
-  "isDnDProject": false,
+  "defaultScriptType": 1,
   "isEcma": false,
   "configs": {
     "name": "Default",
@@ -30,18 +32,19 @@
     {"folderPath":"folders/DEMO/Scripts.yy","order":3,"resourceVersion":"1.0","name":"Scripts","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/DEMO/Fonts.yy","order":4,"resourceVersion":"1.0","name":"Fonts","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Vectos.yy","order":3,"resourceVersion":"1.0","name":"Vectos","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/DEMO/Sprite.yy","order":5,"resourceVersion":"1.0","name":"Sprite","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
   ],
   "TextureGroups": [
-    {"isScaled":true,"autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"Default","resourceType":"GMTextureGroup",},
+    {"isScaled":true,"compressFormat":"bz2","autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"Default","resourceType":"GMTextureGroup",},
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2022.1.1.610",
+    "IDEVersion": "2022.3.0.625",
   },
-  "resourceVersion": "1.4",
+  "resourceVersion": "1.5",
   "name": "Vectors",
   "tags": [],
   "resourceType": "GMProject",

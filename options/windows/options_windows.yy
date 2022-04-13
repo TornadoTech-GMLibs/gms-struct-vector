@@ -1,10 +1,10 @@
 {
   "option_windows_display_name": "Vectors",
   "option_windows_executable_name": "${project_name}.exe",
-  "option_windows_version": "0.0.0.1",
+  "option_windows_version": "0.1.0.0",
   "option_windows_company_info": "Tornado Tech",
   "option_windows_product_info": "Vectors",
-  "option_windows_copyright_info": "",
+  "option_windows_copyright_info": "©Vectors 2021 - 2022",
   "option_windows_description_info": "Example for lib Vectors",
   "option_windows_display_cursor": true,
   "option_windows_icon": "${base_options_dir}/windows/icons/icon.ico",
