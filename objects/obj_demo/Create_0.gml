@@ -53,10 +53,14 @@ var mathVector = Vector2(10, 30);
 log("Math");
 
 log(mathVector.math_length());
-log(mathVector.math_min(100, 100));
-log(mathVector.math_max(2, 2));
-log(mathVector.math_clamp(2, 50, 2, 50));
-log(mathVector.math_lerp(60, 60, 0.2));
+log(mathVector.math_dot(Vector2(17, 6)));
+log(mathVector.math_abs());
+log(mathVector.math_cross(Vector2(23, 50)));
+log(mathVector.math_min(Vector2(100, 100)));
+log(mathVector.math_max(Vector2(2, 2)));
+log(mathVector.math_clamp(Vector2(2, 50), Vector2(2, 50)));
+log(mathVector.math_lerp(Vector2(60, 60), Vector2(0.2)));
+// And more!
 
 delete mathVector;
 log("==========");
