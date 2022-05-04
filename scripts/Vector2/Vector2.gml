@@ -299,8 +299,8 @@ function ClassVector2(x, y) constructor {
 	/// @param {bool} mirror
 	static to_map = function(mirror = false) {
 		var map = ds_map_create();
-		map[? 0] = mirror ? y : x; 
-		map[? 1] = mirror ? x : y;
+		map[? "x"] = mirror ? y : x; 
+		map[? "y"] = mirror ? x : y;
 		return map;
 	}
 	
