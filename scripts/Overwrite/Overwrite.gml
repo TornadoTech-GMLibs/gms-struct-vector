@@ -9,7 +9,11 @@ function __v_draw_text() {
 		var position = argument[0];
 		var text = argument[1];
 	}
-	__draw_text(position.x, position.y, text);
+	
+	var px = position.x;
+	var py = position.y;
+	delete position;
+	__draw_text(px, py, text);
 }
 
 /// @function draw_text_color((x, y) or vector2, string, c1, c2, c3, c4, alpha)
@@ -26,7 +30,11 @@ function __v_draw_text_color() {
 	var c3 = argument[arg_offset + 3];
 	var c4 = argument[arg_offset + 4];
 	var al = argument[arg_offset + 5];
-	__draw_text_color(vector.x, vector.y, st, c1, c2, c3, c4, al);
+	
+	var px = vector.x;
+	var py = vector.y;
+	delete vector;
+	__draw_text_color(px, py, st, c1, c2, c3, c4, al);
 }
 	
 /// @function draw_text_ext((x, y) or vector2, string, sep, w)
@@ -40,7 +48,11 @@ function __v_draw_text_ext() {
 	var st = argument[arg_offset];
 	var sp = argument[arg_offset + 1];
 	var wd = argument[arg_offset + 2];
-	__draw_text_ext(vector.x, vector.y, st, sp, wd);
+	
+	var px = vector.x;
+	var py = vector.y;
+	delete vector;
+	__draw_text_ext(px, py, st, sp, wd);
 }
 	
 /// @function draw_text_ext_color((x, y) or vector2, string, sep, w, c1, c2, c3, c4, alpha)
@@ -59,7 +71,11 @@ function __v_draw_text_ext_color() {
 	var c3 = argument[arg_offset + 5];
 	var c4 = argument[arg_offset + 6];
 	var al = argument[arg_offset + 7];
-	__draw_text_ext_color(vector.x, vector.y, st, sp, wd, c1, c2, c3, c4, al);
+	
+	var px = vector.x;
+	var py = vector.y;
+	delete vector;
+	__draw_text_ext_color(px, py, st, sp, wd, c1, c2, c3, c4, al);
 }
 	
 /// @function draw_text_ext_transformed((x, y) or vector2, string, sep, w, xscale, yscale, angle)	
@@ -76,7 +92,11 @@ function __v_draw_text_ext_transformed() {
 	var xs = argument[arg_offset + 3];
 	var ys = argument[arg_offset + 4];
 	var an = argument[arg_offset + 5];
-	__draw_text_ext_transformed(vector.x, vector.y, st, sp, wd, xs, ys, an);
+	
+	var px = vector.x;
+	var py = vector.y;
+	delete vector;
+	__draw_text_ext_transformed(px, py, st, sp, wd, xs, ys, an);
 }
 	
 /// @function draw_text_ext_transformed_color((x, y) or vector2, string, sep, w, xscale, yscale, angle, c1, c2, c3, c4, alpha)	
@@ -98,7 +118,11 @@ function __v_draw_text_ext_transformed_color() {
 	var c3 = argument[arg_offset + 8];
 	var c4 = argument[arg_offset + 9];
 	var al = argument[arg_offset + 10];
-	__draw_text_ext_transformed_color(vector.x, vector.y, st, sp, wd, xs, ys, an, c1, c2, c3, c4, al);
+	
+	var px = vector.x;
+	var py = vector.y;
+	delete vector;
+	__draw_text_ext_transformed_color(px, py, st, sp, wd, xs, ys, an, c1, c2, c3, c4, al);
 }
 	
 /// @function raw_text_transformed((x, y) or vector2, string, xscale, yscale, angle)	
@@ -113,7 +137,11 @@ function __v_draw_text_transformed() {
 	var xs = argument[arg_offset + 1];
 	var ys = argument[arg_offset + 2];
 	var an = argument[arg_offset + 3];
-	__draw_text_transformed(vector.x, vector.y, st, xs, ys, an);
+	
+	var px = vector.x;
+	var py = vector.y;
+	delete vector;
+	__draw_text_transformed(px, py, st, xs, ys, an);
 }
 	
 /// @function draw_text_transformed_color((x, y) or vector2, string, xscale, yscale, angle, c1, c2, c3, c4, alpha)	
@@ -133,16 +161,19 @@ function __v_draw_text_transformed_color() {
 	var c3 = argument[arg_offset + 7];
 	var c4 = argument[arg_offset + 8];
 	var al = argument[arg_offset + 9];
-	__draw_text_transformed_color(vector.x, vector.y, st, xs, ys, an, c1, c2, c3, c4, al);
+	
+	var px = vector.x;
+	var py = vector.y;
+	delete vector;
+	__draw_text_transformed_color(px, py, st, xs, ys, an, c1, c2, c3, c4, al);
 }
 #endregion
 #region Place
 /// @function place_empty((x, y) or vector2, [object_id])
 function __v_place_empty() {
 	var obj_id = id;
-	var position;
+	var position = argument[0];
 	if (is_vector2(argument[0])) {
-		position = argument[0];
 		if (argument_count > 1) {
 			obj_id = argument[1];
 		}
@@ -152,7 +183,11 @@ function __v_place_empty() {
 			obj_id = argument[3];
 		}
 	}
-	return __place_empty(position.x, position.y, obj_id);
+	
+	var px = position.x;
+	var py = position.y;
+	delete position;
+	return __place_empty(px, py, obj_id);
 }
 	
 /// @function place_free((x, y) or vector2)
@@ -161,7 +196,11 @@ function __v_place_free() {
 	if (argument_count > 1) {
 		position = Vector2(argument[0], argument[1]);
 	}
-	return __place_free(position);
+	
+	var px = position.x;
+	var py = position.y;
+	delete position;
+	return __place_free(px, py);
 }
 #endregion
 #endregion
