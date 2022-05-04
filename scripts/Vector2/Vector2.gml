@@ -191,26 +191,9 @@ function ClassVector2(x, y) constructor {
 		return Vector2(round(x), round(y));
 	}
 	
-	/// @func math_roundv()
-	/// @desc Sets self with all components in round values
-	static math_roundv = function() {
-		var value = math_round();
-		set(value);
-		delete value;
-		return self;
-	}
-
 	/// @func math_floor()
 	static math_floor = function() {
 		return Vector2(floor(x), floor(y));
-	}
-	
-	/// @func math_floorv()
-	static math_floorv = function() {
-		var value = math_floor();
-		set(value);
-		delete value;
-		return self;
 	}
 	
 	/// @func math_ceil()
@@ -218,13 +201,6 @@ function ClassVector2(x, y) constructor {
 		return Vector2(ceil(x), ceil(y));
 	}
 	
-	/// @func math_ceilv()
-	static math_ceilv = function() {
-		var value = math_ceilv();
-		set(value);
-		delete value;
-		return self;
-	}
 	
 	/// @func math_length()
 	/// @desc Returns real vector length
@@ -319,6 +295,15 @@ function ClassVector2(x, y) constructor {
 	#endregion
 	#region Convert
 	
+	/// @func to_map()
+	/// @param {bool} mirror
+	static to_map = function(mirror = false) {
+		var map = ds_map_create();
+		map[? 0] = mirror ? y : x; 
+		map[? 1] = mirror ? x : y;
+		return map;
+	}
+	
 	/// @func to_list()
 	/// @param {bool} mirror
 	static to_list = function(mirror = false) {
@@ -394,9 +379,9 @@ function ClassVector2(x, y) constructor {
 	/// @func dir_multi()
 	/// @param {vector2_dir} direction
 	/// @param {real} value
-	static dir_multi = function(dir, value) {
+	static dir_multi = function(_dir, _value) {
 		var vector = copy();
-		__dir_base(dir, value, vector);
+		__dir_base(_dir, _value, vector);
 		multi(vector);
 		delete vector;
 		return self;
@@ -408,12 +393,22 @@ function ClassVector2(x, y) constructor {
 #region Vector2
 
 /// @func vector2_to_string()
-/// @param {Vector2} Vector2
+/// @param {Vector2} vector2
 /// @param {string} delemiter
-function vector2_to_string(vector, delimiter = ":") {
-	return vector.to_string(delimiter);
+function vector2_to_string(_vector, _delimiter = ":") {
+	return _vector.to_string(_delimiter);
 }
+
+/// @func is_vector2()
+/// @param {Vector2} vector2
+function is_vector2(_vector) {
+	if (is_struct(_vector)) {
+		return instanceof(_vector) == "ClassVector2";
+	}
 	
+	return false;
+}
+
 #endregion
 #region Display
 
@@ -438,7 +433,7 @@ function position_get(_object = id) {
 }
 
 /// @func position_set()
-/// @param {Vector2} Vector2
+/// @param {Vector2} vector2
 /// @param {object} obj
 function position_set(_vector2, _object = id) {
 	_object.x = _vector2.x;
@@ -446,7 +441,7 @@ function position_set(_vector2, _object = id) {
 }
 	
 /// @func position_add()
-/// @param {Vector2} Vector2
+/// @param {Vector2} vector2
 /// @param {object} obj
 function position_add(_vector2, _object = id) {
 	_object.x += _vector2.x;
@@ -454,7 +449,7 @@ function position_add(_vector2, _object = id) {
 }
 	
 /// @func position_multi()
-/// @param {Vector2} Vector2
+/// @param {Vector2} vector2
 /// @param {object} obj
 function position_multi(_vector2, _object = id) {
 	_object.x *= _vector2.x;

@@ -8,4 +8,4 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_center);
 draw_set_font(noone);
 
-draw_text(5, 15, "Display Size: " + display_get_gui_size().to_string("x"));
+draw_text_color(Vector2(5, 15), "Display Size: " + display_get_gui_size().to_string("x"), c_yellow, c_yellow, c_orange, c_orange, 1);
