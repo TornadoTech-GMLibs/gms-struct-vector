@@ -110,6 +110,13 @@ function ClassVector2(x, y) constructor {
 		return self;
 	}
 	
+	// @func set_angle()
+	/// @param {bool} return_radians
+	/// @desc Returns self Vector2 angle with respect to the X axis.
+	static set_angle = function(ang, radians = false) {
+		x = (radians) ? arccos(ang) : darccos(ang);
+		y = (radians) ? arcsin(ang) : darcsin(ang);
+	}
 	#endregion
 	#region Math
 	
@@ -200,7 +207,6 @@ function ClassVector2(x, y) constructor {
 	static math_ceil = function() {
 		return Vector2(ceil(x), ceil(y));
 	}
-	
 	
 	/// @func math_length()
 	/// @desc Returns real vector length

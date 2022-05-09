@@ -156,11 +156,11 @@ function __v_draw_text_transformed_color() {
 	var xs = argument[arg_offset + 1];
 	var ys = argument[arg_offset + 2];
 	var an = argument[arg_offset + 3];
-	var c1 = argument[arg_offset + 5];
-	var c2 = argument[arg_offset + 6];
-	var c3 = argument[arg_offset + 7];
-	var c4 = argument[arg_offset + 8];
-	var al = argument[arg_offset + 9];
+	var c1 = argument[arg_offset + 4];
+	var c2 = argument[arg_offset + 5];
+	var c3 = argument[arg_offset + 6];
+	var c4 = argument[arg_offset + 7];
+	var al = argument[arg_offset + 8];
 	
 	var px = vector.x;
 	var py = vector.y;
