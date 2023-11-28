@@ -1,0 +1,8 @@
+{
+  "FolderOrderSettings": [
+    {"name":"Tests","order":1,"path":"folders/Tests.yy",},
+  ],
+  "ResourceOrderSettings": [
+    {"name":"room_empty","order":1,"path":"rooms/room_empty/room_empty.yy",},
+  ],
+}
