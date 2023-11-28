@@ -360,6 +360,17 @@ function Vector2(x = 0, y = 0) constructor {
 		set(get_lerp(target, amount));
 		return self;
 	}
+	
+	/// @return {Struct.Vector2}
+	static get_mirror = function() {
+		return new Vector2(y, x);
+	}
+	
+	/// @return {Id.Instance<Struct.Vector2>}
+	static set_mirror = function() {
+		set(get_mirror());
+		return self;
+	}
 
 	/// @retunr {Struct.Vector2}
 	static copy = function() {
